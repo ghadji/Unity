@@ -222,8 +222,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\GameOverManager.cs" />
+    <Compile Include="Assets\Scripts\CountownManager.cs" />
     <Compile Include="Assets\Scripts\DisplayWord.cs" />
+    <Compile Include="Assets\Scripts\GameOverManager.cs" />
+    <Compile Include="Assets\Scripts\StartGameManager.cs" />
     <Compile Include="Assets\Scripts\UIManager.cs" />
     <Compile Include="Assets\Scripts\Word.cs" />
     <Compile Include="Assets\Scripts\WordCollider.cs" />
