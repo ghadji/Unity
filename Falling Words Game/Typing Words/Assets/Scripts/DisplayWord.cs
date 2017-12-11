@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class DisplayWord : MonoBehaviour {
 
     public Text text;
-    public float fallSpeed = 1f;
+    public float minFallSpeed = 1f;
+    public float maxFallSpeed = 2.5f;
 
     private void Start() {
         text = GetComponent<Text>();
@@ -28,6 +29,6 @@ public class DisplayWord : MonoBehaviour {
     }
 
     private void Update() {
-        transform.Translate(0, -fallSpeed * Time.deltaTime, 0);
+        transform.Translate(0, -Random.Range(minFallSpeed, maxFallSpeed) * Time.deltaTime, 0);
     }
 }

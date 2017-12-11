@@ -7,17 +7,25 @@ using UnityEngine.SceneManagement;
 public class CountownManager : MonoBehaviour {
 
     public Text countdownText;
-    private float countdown = 3f;
+    private float countdown = 3f;   
 
-    void Update() {
+    private void Start() {
+        StartCoroutine(count());
+    }
 
-        if (countdown > 0) {
-            countdown -= Time.deltaTime;
-            countdownText.text = Mathf.RoundToInt(countdown).ToString();
-        } else {
-            SceneManager.LoadScene(1);
+    IEnumerator count() {
+        while (countdown > 0) {
+            yield return new WaitForSeconds(1f);
+            countdown--;
+            countdownText.text = countdown.ToString();
         }
+        StartCoroutine(delay());
+    }
 
+    IEnumerator delay() {
+        countdownText.text = "TYPE";
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene(2);
     }
 
 }

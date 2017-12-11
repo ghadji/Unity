@@ -9,5 +9,8 @@ EditorBuildSettings:
     path: Assets/Menu.unity
     guid: fb03f2e4d7bd838479d4e9ba88d00ce8
   - enabled: 1
+    path: Assets/Countdown.unity
+    guid: 07b4ed6cd9cd8384dbc56f7f67ae62a5
+  - enabled: 1
     path: Assets/Main.unity
     guid: ea5125a1bb3d8014a909902bc860d48a

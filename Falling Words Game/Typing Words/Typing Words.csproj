@@ -222,9 +222,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\BackgroundMusicSingleton.cs" />
     <Compile Include="Assets\Scripts\CountownManager.cs" />
     <Compile Include="Assets\Scripts\DisplayWord.cs" />
     <Compile Include="Assets\Scripts\GameOverManager.cs" />
+    <Compile Include="Assets\Scripts\MusicController.cs" />
     <Compile Include="Assets\Scripts\StartGameManager.cs" />
     <Compile Include="Assets\Scripts\UIManager.cs" />
     <Compile Include="Assets\Scripts\Word.cs" />
