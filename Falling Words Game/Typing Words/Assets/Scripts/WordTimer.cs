@@ -1,0 +1,19 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class WordTimer : MonoBehaviour {
+
+    public WordManager wordManager;
+    public float wordDelay = 1.5f;
+    private float nextWordTimer = 0f;
+
+    private void Update() {
+        if (Time.time >= nextWordTimer) {
+            wordManager.addWord();
+            nextWordTimer = Time.time + wordDelay;
+            wordDelay *= 0.99f;
+        }
+    }
+
+}
