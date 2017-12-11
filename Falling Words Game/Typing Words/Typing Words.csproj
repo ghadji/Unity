@@ -222,7 +222,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\GameOverManager.cs" />
     <Compile Include="Assets\Scripts\DisplayWord.cs" />
+    <Compile Include="Assets\Scripts\UIManager.cs" />
     <Compile Include="Assets\Scripts\Word.cs" />
     <Compile Include="Assets\Scripts\WordCollider.cs" />
     <Compile Include="Assets\Scripts\WordGenerator.cs" />
@@ -230,7 +232,6 @@
     <Compile Include="Assets\Scripts\WordManager.cs" />
     <Compile Include="Assets\Scripts\WordSpawner.cs" />
     <Compile Include="Assets\Scripts\WordTimer.cs" />
-    <Compile Include="Assets\UIManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\Dictionary.txt" />

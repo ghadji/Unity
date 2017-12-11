@@ -37,11 +37,13 @@ public class WordManager : MonoBehaviour {
 
         if (hasActiveWord && activeWord.isTyped()) {
             hasActiveWord = false;
-            words.Remove(activeWord);
+            removeWord(activeWord);
             uiManager.updateScore();
         }
     }
-
     
+    public void removeWord(Word word) {
+        words.Remove(word);
+    }
 
 }

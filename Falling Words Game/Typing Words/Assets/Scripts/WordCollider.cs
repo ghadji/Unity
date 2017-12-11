@@ -4,7 +4,16 @@ using UnityEngine;
 
 public class WordCollider : MonoBehaviour {
 
-    private void OnCollisionEnter2D(Collision2D collision) {
-        Debug.Log("Game Over");
+    public GameOverManager gameOverManager;
+    public WordManager wordManager;
+
+    private void OnCollisionEnter(Collision collision) {
+        Debug.Log("GameOver");
+        gameOverManager.transform.gameObject.SetActive(true);
+        gameOverManager.gameOver();
+    }
+
+    private void OnCollisionExit(Collision collision) {
+        Destroy(collision.gameObject);
     }
 }
