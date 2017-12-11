@@ -22,7 +22,9 @@ public class DisplayWord : MonoBehaviour {
     }
 
     public void removeWord() {
-        Destroy(gameObject);
+        AudioSource source = GetComponent<AudioSource>();
+        source.Play();
+        Destroy(gameObject, 0.3f);
     }
 
     private void Update() {

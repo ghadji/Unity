@@ -11,6 +11,8 @@ public class WordManager : MonoBehaviour {
     private bool hasActiveWord;
     private Word activeWord;
 
+    public UIManager uiManager;
+
     public void addWord() {
         Word word = new Word(WordGenerators.getRandomWord(), wordSpawner.spawnWord());
 
@@ -36,7 +38,10 @@ public class WordManager : MonoBehaviour {
         if (hasActiveWord && activeWord.isTyped()) {
             hasActiveWord = false;
             words.Remove(activeWord);
+            uiManager.updateScore();
         }
     }
+
+    
 
 }

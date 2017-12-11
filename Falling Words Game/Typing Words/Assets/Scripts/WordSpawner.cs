@@ -8,8 +8,11 @@ public class WordSpawner : MonoBehaviour {
     public GameObject wordPrefab;
     public Transform wordCanvas;
 
+    public float xPos;
+    public float yPos;
+
     public DisplayWord spawnWord() {
-        Vector3 randomPos = new Vector3(Random.Range(-5f, 5f), 5f);
+        Vector3 randomPos = new Vector3(Random.Range(-xPos, xPos), yPos);
 
         GameObject wordObject = Instantiate(wordPrefab, randomPos, Quaternion.identity, wordCanvas);
 

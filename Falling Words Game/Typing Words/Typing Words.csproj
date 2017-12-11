@@ -230,6 +230,7 @@
     <Compile Include="Assets\Scripts\WordManager.cs" />
     <Compile Include="Assets\Scripts\WordSpawner.cs" />
     <Compile Include="Assets\Scripts\WordTimer.cs" />
+    <Compile Include="Assets\UIManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\Dictionary.txt" />
