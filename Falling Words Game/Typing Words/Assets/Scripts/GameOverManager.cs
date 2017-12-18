@@ -13,9 +13,12 @@ public class GameOverManager : MonoBehaviour {
     public Text showTotalTime;
 
     public UIManager uiManager;
+    public WordTimer wordTimer;
 
     public void gameOver() {
         uiManager.setIsGameOver(true);
+
+        wordTimer.gameEnded = true;
 
         showFinalScore.text = finalScoreText.text;
         showTotalTime.text = finalTotalTime.text;

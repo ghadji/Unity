@@ -14,9 +14,10 @@ public class WordManager : MonoBehaviour {
     public UIManager uiManager;
 
     public void addWord() {
-        Word word = new Word(WordGenerators.getRandomWord(), wordSpawner.spawnWord());
+            Word word = new Word(WordGenerators.getRandomWord(), wordSpawner.spawnWord());
 
-        words.Add(word);
+            words.Add(word);
+
     }
 
     public void typeLetter(char letter) {
@@ -25,13 +26,10 @@ public class WordManager : MonoBehaviour {
                 activeWord.RegisterTypedLetter();
             }
         } else {
-            foreach(Word word in words) {
-                if (word.getNextLetter() == letter) {
-                    activeWord = word;
-                    hasActiveWord = true;
-                    word.RegisterTypedLetter();
-                    break;
-                }
+            if (words[0].getNextLetter() == letter) {
+                activeWord = words[0];
+                hasActiveWord = true;
+                words[0].RegisterTypedLetter();
             }
         }
 
@@ -41,7 +39,7 @@ public class WordManager : MonoBehaviour {
             uiManager.updateScore();
         }
     }
-    
+
     public void removeWord(Word word) {
         words.Remove(word);
     }

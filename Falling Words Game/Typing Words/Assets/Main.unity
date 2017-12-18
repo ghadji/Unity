@@ -543,6 +543,7 @@ MonoBehaviour:
   wordManager: {fileID: 1023983136}
   wordDelay: 1.5
   spawningIncreaseRate: 0.98
+  gameEnded: 0
 --- !u!1 &1126280045
 GameObject:
   m_ObjectHideFlags: 0
@@ -1458,6 +1459,7 @@ MonoBehaviour:
   finalTotalTime: {fileID: 756421825}
   showTotalTime: {fileID: 2089688214}
   uiManager: {fileID: 1373512375}
+  wordTimer: {fileID: 1023983140}
 --- !u!1 &2089688212
 GameObject:
   m_ObjectHideFlags: 0
