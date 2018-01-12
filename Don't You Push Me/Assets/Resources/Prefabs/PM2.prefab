@@ -630,10 +630,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_PlayerNumber: 1
-  m_Speed: 12
+  m_Speed: 10
   m_TurnSpeed: 200
   pushForce: 150
-  gameUI: {fileID: 114819798243892688, guid: 30d226f772bc5a64f8949c531fa52dfb, type: 2}
   m_MovementInputValue: 0
 --- !u!222 &222685076658625512
 CanvasRenderer:

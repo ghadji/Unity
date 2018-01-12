@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameAreaCollider : MonoBehaviour {
+public class GameAreaCollider : MonoBehaviour
+{
 
     public GameUI gameUI;
     public SpawnManager spawnManager;
@@ -12,7 +13,6 @@ public class GameAreaCollider : MonoBehaviour {
         if (c.transform.tag == "Player")
         {
             MovementController movementController = c.GetComponent<MovementController>();
-            Debug.Log("Player " + movementController.m_PlayerNumber + " has lost!");
             gameUI.RoundEnd(movementController.m_PlayerNumber);
 
             spawnManager.ResetSpawns();
