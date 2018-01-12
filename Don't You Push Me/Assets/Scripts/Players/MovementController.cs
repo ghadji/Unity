@@ -90,10 +90,4 @@ public class MovementController : MonoBehaviour {
             }
         }
     }
-
-    private void OnTriggerExit(Collider c) {
-        if (c.transform.tag == "GameArea") {
-            Debug.Log("Player " + m_PlayerNumber + " has lost!");
-        }
-    }
 }

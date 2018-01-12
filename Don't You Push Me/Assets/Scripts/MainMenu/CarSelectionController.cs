@@ -9,9 +9,10 @@ public class CarSelectionController : MonoBehaviour {
     public string levelToLoad = "MainScene";
 
     public Text firstPlayerName;
-    public int firstPlayerModel = 1;
     public Text secondPlayerName;
-    public int secondPlayerModel = 2;
+
+    public Player1_CarSelection carSelection_1;
+    public Player2_CarSelection carSelection_2;
 
     public void StartGame() {
         AssignPlayersNames();
@@ -34,8 +35,8 @@ public class CarSelectionController : MonoBehaviour {
     }
 
     private void AssignPlayersModels() {
-        PlayersManager.Instance.firstPlayerModel = firstPlayerModel;
-        PlayersManager.Instance.secondPlayerModel = secondPlayerModel;
+        PlayersManager.Instance.firstPlayerModel = carSelection_1.index;
+        PlayersManager.Instance.secondPlayerModel = carSelection_2.index;
     }
 
     public void Back() {

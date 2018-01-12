@@ -367,7 +367,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 271635968}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1533028040}
+        m_MethodName: Next
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &271635968
@@ -524,7 +535,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 616022305}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2063659424}
+        m_MethodName: Next
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &616022305
@@ -721,7 +743,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 701817642}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1533028040}
+        m_MethodName: Prev
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &701817642
@@ -1285,7 +1318,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1243903946}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2063659424}
+        m_MethodName: Prev
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1243903946
@@ -1733,6 +1777,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1533028039}
+  - component: {fileID: 1533028040}
   m_Layer: 0
   m_Name: Player1_CarSelection
   m_TagString: Untagged
@@ -1761,6 +1806,27 @@ RectTransform:
   m_AnchoredPosition: {x: -480, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1533028040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1533028038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b52297d40f7a1ad438037c7d3ac15366, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carModels:
+  - {fileID: 11400000, guid: 0ddd989f763d60542ab1c43d1dd9108a, type: 2}
+  - {fileID: 11400000, guid: de5562070d3369442bd3ea88c0756f2f, type: 2}
+  - {fileID: 11400000, guid: c195284c266ad1941b0989e8088e24fe, type: 2}
+  - {fileID: 11400000, guid: 1d78d7e9a9c429e4b8e18cb03ee55e62, type: 2}
+  - {fileID: 11400000, guid: 5d111410608f2f44aa0fd86d8c211856, type: 2}
+  - {fileID: 11400000, guid: 5555f5f58c60f0e4585d4d044514bf56, type: 2}
+  - {fileID: 11400000, guid: a1ee0937230832d44aee66439479a6ad, type: 2}
+  image: {fileID: 859229005}
+  index: 0
 --- !u!1 &1593090043
 GameObject:
   m_ObjectHideFlags: 0
@@ -2076,11 +2142,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneFader: {fileID: 680939819}
-  levelToLoad: MainScene
+  levelToLoad: GameScene
   firstPlayerName: {fileID: 2013467813}
-  firstPlayerModel: 1
   secondPlayerName: {fileID: 262448533}
-  secondPlayerModel: 2
+  carSelection_1: {fileID: 1533028040}
+  carSelection_2: {fileID: 2063659424}
 --- !u!4 &1651164756
 Transform:
   m_ObjectHideFlags: 0
@@ -2309,6 +2375,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 2063659423}
+  - component: {fileID: 2063659424}
   m_Layer: 0
   m_Name: Player2_CarSelection
   m_TagString: Untagged
@@ -2337,6 +2404,27 @@ RectTransform:
   m_AnchoredPosition: {x: 480, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2063659424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2063659422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71516121fb5819d42bcb6537a692c508, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carModels:
+  - {fileID: 11400000, guid: 0ddd989f763d60542ab1c43d1dd9108a, type: 2}
+  - {fileID: 11400000, guid: de5562070d3369442bd3ea88c0756f2f, type: 2}
+  - {fileID: 11400000, guid: c195284c266ad1941b0989e8088e24fe, type: 2}
+  - {fileID: 11400000, guid: 1d78d7e9a9c429e4b8e18cb03ee55e62, type: 2}
+  - {fileID: 11400000, guid: 5d111410608f2f44aa0fd86d8c211856, type: 2}
+  - {fileID: 11400000, guid: 5555f5f58c60f0e4585d4d044514bf56, type: 2}
+  - {fileID: 11400000, guid: a1ee0937230832d44aee66439479a6ad, type: 2}
+  image: {fileID: 2032554992}
+  index: 0
 --- !u!1 &2098008173
 GameObject:
   m_ObjectHideFlags: 0

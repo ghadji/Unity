@@ -11,6 +11,9 @@ public class PlayerNameManager: MonoBehaviour {
     public TextMeshPro textMesh;
 
     private void Start() {
+        m_Camera = Camera.main;
+        textMesh = GetComponent<TextMeshPro>();
+
         if (movementController.m_PlayerNumber == 1) {
             textMesh.SetText(PlayersManager.Instance.firstPlayerName);
         } else {

@@ -339,12 +339,18 @@
     <Compile Include="Assets\Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraControl.cs" />
+    <Compile Include="Assets\Scripts\GameAreaCollider.cs" />
+    <Compile Include="Assets\Scripts\GUI\GameUI.cs" />
     <Compile Include="Assets\Scripts\GUI\SceneFader.cs" />
     <Compile Include="Assets\Scripts\MainMenu\CarSelectionController.cs" />
     <Compile Include="Assets\Scripts\MainMenu\MainMenuController.cs" />
     <Compile Include="Assets\Scripts\MainMenu\PlayersManager.cs" />
+    <Compile Include="Assets\Scripts\Players\CarModel_Base.cs" />
     <Compile Include="Assets\Scripts\Players\MovementController.cs" />
+    <Compile Include="Assets\Scripts\Players\Player1_CarSelection.cs" />
+    <Compile Include="Assets\Scripts\Players\Player2_CarSelection.cs" />
     <Compile Include="Assets\Scripts\Players\PlayerNameManager.cs" />
+    <Compile Include="Assets\Scripts\Players\SpawnManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Anton OFL.txt" />
