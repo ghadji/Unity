@@ -5,7 +5,7 @@ using UnityEngine;
 public class MainMenuController : MonoBehaviour {
 
     public SceneFader sceneFader;
-    public string levelToLoad = "MainScene";
+    public string levelToLoad = "CarSelection";
 
     public void StartGame() {
         sceneFader.FadeTo(levelToLoad);
