@@ -10,9 +10,9 @@ public class Noble : ScriptableObject {
     public int pointsReward;
 
     [Header("Cost")]
-    public int redCost;
-    public int blueCost;
-    public int whiteCost;
-    public int greenCost;
-    public int blackCost;
+    public int ruby;
+    public int sapphire;
+    public int diamond;
+    public int emerald;
+    public int onyx;
 }

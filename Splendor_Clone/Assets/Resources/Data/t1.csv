@@ -1,4 +1,4 @@
-tier,name,gemReward,pointsReward,red,blue,white,green,black
+tier,name,gemReward,pointsReward,ruby,sapphire,diamond,emerald,onyx
 1,Card01,Green,0,1,0,1,2,1
 1,Card02,Red,0,0,1,1,1,2
 1,Card03,Black,0,3,1,0,1,0
