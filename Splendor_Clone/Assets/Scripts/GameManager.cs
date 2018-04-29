@@ -5,14 +5,6 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [Header("Available gems")]
-    [SerializeField] int rubyGems = 7;
-    [SerializeField] int sapphireGems = 7;
-    [SerializeField] int onyxGems = 7;
-    [SerializeField] int diamondGems = 7;
-    [SerializeField] int emeraldGems = 7;
-    [SerializeField] int goldGems = 5;
-
     [Header("Available cards")]
     [SerializeField] List<Card> cards = new List<Card>();
     [SerializeField] int t1_counter = 0;
