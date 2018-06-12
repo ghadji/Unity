@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 036da5902d10cd24d8e1c45ee55b2509
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - gemRewardImage: {fileID: 114888884737210472, guid: 1a2e473c11107cb45a8b76e2170d9e17,
+      type: 2}
+  - pointsRewardText: {fileID: 114801635827944104, guid: 1a2e473c11107cb45a8b76e2170d9e17,
+      type: 2}
+  - gemCosts: {fileID: 1352272384294744, guid: 1a2e473c11107cb45a8b76e2170d9e17, type: 2}
+  - gemCost: {fileID: 1955368847574168, guid: 5c46920f64d392a4987bedda7f0052db, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

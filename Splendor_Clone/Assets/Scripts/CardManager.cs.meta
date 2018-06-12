@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 71cb4fb50df3b8841a7e1ea40e00beb4
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - card_prefab: {fileID: 1979161636206222, guid: 1a2e473c11107cb45a8b76e2170d9e17,
+      type: 2}
+  - cardImg: {instanceID: 0}
+  - noble_go: {instanceID: 0}
+  - nobleImg: {instanceID: 0}
+  - ZoomCard: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

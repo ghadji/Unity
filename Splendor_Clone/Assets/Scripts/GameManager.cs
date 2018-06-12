@@ -2,92 +2,80 @@
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using System;
 
-public class GameManager : MonoBehaviour
-{
-    [Header("Available cards")]
-    [SerializeField] List<Card> cards = new List<Card>();
-    [SerializeField] int t1_counter = 0;
-    [SerializeField] int t2_counter = 0;
-    [SerializeField] int t3_counter = 0;
-    [SerializeField] List<Noble> nobles = new List<Noble>();
+public class GameManager : MonoBehaviour {
+    public static GameManager Instance { get; set; }
 
-    [Header("Card/Noble Prefabs")]
-    [SerializeField] GameObject t1_go;
-    [SerializeField] GameObject t2_go;
-    [SerializeField] GameObject t3_go;
-    [SerializeField] Image cardImg;
-    [SerializeField] GameObject noble_go;
-    [SerializeField] Image nobleImg;
+    public GameObject mainMenu;
+    public GameObject serverMenu;
+    public GameObject connectMenu;
 
-    void Awake() {
-        TextAsset t1_cards = Resources.Load<TextAsset>("Data/t1");
-        LoadCards(t1_cards);
+    public GameObject serverPrefab;
+    public GameObject clientPrefab;
 
-        TextAsset t2_cards = Resources.Load<TextAsset>("Data/t2");
-        LoadCards(t2_cards);
+    public InputField nameInput;
 
-        TextAsset t3_cards = Resources.Load<TextAsset>("Data/t3");
-        LoadCards(t3_cards);
-
-        TextAsset nobles = Resources.Load<TextAsset>("Data/nobles");
-        LoadNobles(nobles);
-
-        GenerateCards();
-        GenerateNobles();
+    private void Start() {
+        Instance = this;
+        serverMenu.SetActive(false);
+        connectMenu.SetActive(false);
+        DontDestroyOnLoad(gameObject);
     }
 
-    #region LOAD_DATA
-    void LoadCards(TextAsset ta) {
-        string[] data = ta.text.Split(new char[] { '\n' });
-        for (int i = 1; i < data.Length - 1; i++) {
-            string[] row = data[i].Split(new char[] { ',' });
-            Card c = new Card();
-            int.TryParse(row[0], out c.tier);
-            if (c.tier == 1)
-                t1_counter++;
-            else if (c.tier == 2)
-                t2_counter++;
-            else
-                t3_counter++;
-            c.name = row[1];
-            c.gemReward = row[2];
-            int.TryParse(row[3], out c.pointsReward);
-            int.TryParse(row[4], out c.ruby);
-            int.TryParse(row[5], out c.sapphire);
-            int.TryParse(row[6], out c.diamond);
-            int.TryParse(row[7], out c.emerald);
-            int.TryParse(row[8], out c.onyx);
-            cards.Add(c);
+    public void ConnectButton() {
+        mainMenu.SetActive(false);
+        connectMenu.SetActive(true);
+    }
+    public void HostButton() {
+        try {
+            Server s = Instantiate(serverPrefab).GetComponent<Server>();
+            s.Init();
+            
+            Client c = Instantiate(clientPrefab).GetComponent<Client>();
+            c.clientName = nameInput.text;
+            if (c.clientName == "")
+                c.clientName = "Host";
+            c.ConnectToServer("127.0.0.1", 6321);
+        } catch (Exception e) {
+            Debug.Log("Failed to init server: " + e.Message);
+        }
+        mainMenu.SetActive(false);
+        serverMenu.SetActive(true);
+    }
+    public void ExitButton() {
+        Application.Quit();
+    }
+    public void BackButton() {
+        serverMenu.SetActive(false);
+        connectMenu.SetActive(false);
+        mainMenu.SetActive(true);
+
+        Server s = FindObjectOfType<Server>();
+        if (s != null)
+            Destroy(s.gameObject);
+
+        Client c = FindObjectOfType<Client>();
+        if (c != null)
+            Destroy(c.gameObject);
+    }
+
+    public void ConnectToServerButton() {
+        string hostAddress = GameObject.Find("HostInput").GetComponent<InputField>().text;
+
+        if (hostAddress == "")
+            hostAddress = "127.0.0.1";
+
+        try {
+            Client c = Instantiate(clientPrefab).GetComponent<Client>();
+            c.ConnectToServer(hostAddress, 6321);
+            c.clientName = nameInput.text;
+            if (c.clientName == "") 
+                c.clientName = "Client";
+            
+            connectMenu.SetActive(false);
+        } catch (Exception e) {
+            Debug.Log("Error connecting to server: " + e.Message);
         }
     }
-
-    void LoadNobles(TextAsset ta) {
-        string[] data = ta.text.Split(new char[] { '\n' });
-        for (int i = 1; i < data.Length - 1; i++) {
-            string[] row = data[i].Split(new char[] { ',' });
-            Noble n = new Noble();
-            n.name = row[0];
-            int.TryParse(row[1], out n.pointsReward);
-            int.TryParse(row[2], out n.ruby);
-            int.TryParse(row[3], out n.sapphire);
-            int.TryParse(row[4], out n.diamond);
-            int.TryParse(row[5], out n.emerald);
-            int.TryParse(row[6], out n.onyx);
-            nobles.Add(n);
-        }
-    }
-    #endregion
-
-    #region GENERATE_CARDS
-    void GenerateCards() {
-
-    }
-
-    void GenerateNobles() {
-
-    }
-    #endregion
-
-
 }
